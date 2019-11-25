@@ -1,0 +1,153 @@
+html,
+body,
+#root {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-image: radial-gradient(#0c233e, #01011d);
+}
+
+.logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.logo svg g#g1166,
+.logo svg g#g1170,
+.logo svg g#g1174,
+.logo svg g#g1274,
+.logo svg g#g1278,
+.logo svg g#g1282 {
+  animation: flicker 1.4s linear infinite alternate;
+}
+
+.logo svg g#g156,
+.logo svg g#g160,
+.logo svg g#g164,
+.logo svg g#g192,
+.logo svg g#g196,
+.logo svg g#g200 {
+  animation: flicker 9.2s cubic-bezier(0.02, 1.4, 1, -0.12) infinite alternate-reverse forwards;
+}
+
+.btn {
+  font-size: 2.5rem;
+  color: #89d2f6;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.scene {
+  width: 100%;
+  height: 100%;
+}
+
+/* Preloader */
+.preloader {
+  width: 70%;
+  margin: 0 auto;
+  background-color: grey;
+}
+
+.preloader .filler {
+  width: 7%;
+  height: 10px;
+  background-color: rgb(40, 142, 5);
+  border-right: 1px solid black;
+}
+
+/* Main menu */
+#startup {
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Play */
+#spin.btn {
+  color: #ec72a5;
+}
+
+#score {
+  font-size: 5.2rem;
+  -webkit-text-stroke: 1px #89d2f6;
+  color: transparent;
+}
+
+#symbols {
+  width: 100%;
+  height: 43%;
+}
+
+#symbols>div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 43vh;
+  width: 100%;
+  perspective: 1000px;
+  padding: 5.2% 0;
+  box-sizing: content-box;
+  border-top: 4px solid #ec72a5;
+  border-bottom: 4px solid #ec72a5;
+}
+
+.spinner {
+  width: 33.33%;
+  height: 100%;
+  overflow-y: hidden;
+  transform-style: preserve-3d;
+  /* position: absolute; */
+}
+
+.symbol {
+  font-size: 9.2rem;
+  -webkit-text-stroke: 1px #ec72a5;
+  color: transparent;
+}
+
+.symbol.spin {
+  animation: spin .2s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: translateY(-300%);
+  }
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+@keyframes flicker {
+
+  0%,
+  19.999%,
+  22%,
+  62.999%,
+  64%,
+  64.999%,
+  70%,
+  100% {
+    opacity: .99;
+  }
+
+  20%,
+  21.999%,
+  63%,
+  63.999%,
+  65%,
+  69.999% {
+    opacity: .17;
+  }
+}
